@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Install Guide · Barcode QR</title>
+<link rel="icon" href="icon-192.png">
+<meta name="theme-color" content="#D70051">
+<script src="qrcode.min.js"></script>
+<style>
+  :root { --brand: #D70051; --gray: #6A737B; --line: #E7E6E6; --soft: #FBF2F5; color-scheme: light; }
+  * { box-sizing: border-box; }
+  body { font-family: "Malgun Gothic", system-ui, sans-serif; font-size: 15px; line-height: 1.55; max-width: 960px; margin: 0 auto; padding: 0 16px 3rem; color: #222; background: #fff; }
+  header { display: flex; align-items: center; gap: .8rem; padding: 1rem 0; border-bottom: 2px solid #222; margin-bottom: 1.5rem; }
+  header img { width: 40px; height: 40px; border-radius: 9px; }
+  h1 { font-size: 1.35rem; margin: 0; }
+  h2 { font-size: 1.15rem; margin: 0 0 1rem; display: flex; align-items: center; gap: .5rem; }
+  h2::before { content: ""; width: 6px; height: 1.1em; background: var(--brand); }
+  h3 { font-size: 1rem; margin: 1.6rem 0 .5rem; color: var(--gray); }
+  a { color: var(--brand); }
+  .intro { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: center; background: var(--soft); border-radius: 6px; padding: 1.2rem; margin-bottom: 2rem; }
+  .intro p { margin: .3rem 0; }
+  .intro .url { font-weight: bold; word-break: break-all; }
+  #qr { background: #fff; padding: 8px; border-radius: 4px; width: fit-content; }
+  #qr img, #qr canvas { display: block; }
+  .open { display: inline-block; margin-top: .6rem; background: var(--brand); color: #fff; font-weight: bold; text-decoration: none; padding: .5rem 1.3rem; border-radius: 4px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+  section.card { border: 1px solid var(--line); border-radius: 6px; padding: 1.2rem; }
+  ol { margin: 0; padding-left: 1.4rem; }
+  ol li { margin: .55rem 0; padding-left: .2rem; }
+  .key { display: inline-flex; align-items: center; gap: .25rem; border: 1px solid var(--line); border-radius: 4px; padding: 0 .4rem; background: #fafafa; font-weight: bold; white-space: nowrap; }
+  .key svg { width: 1em; height: 1em; }
+  .note { font-size: .9rem; color: var(--gray); margin: .8rem 0 0; }
+  .warn { border-left: 4px solid var(--brand); background: var(--soft); padding: .6rem .9rem; margin: 0 0 1rem; font-size: .92rem; }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  th, td { text-align: left; vertical-align: top; padding: .55rem .6rem; border-bottom: 1px solid var(--line); }
+  th { color: var(--gray); font-weight: bold; width: 38%; }
+  .extra { margin-top: 2rem; }
+</style>
+</head>
+<body>
+<header>
+  <img src="icon-192.png" alt="">
+  <h1>Barcode QR · Install Guide</h1>
+</header>
+
+<div class="intro">
+  <div id="qr" aria-label="QR code for the app address"></div>
+  <div>
+    <p>Scan this QR code with your phone camera, or open this address on your phone:</p>
+    <p class="url" id="url"></p>
+    <p>Internet is needed <b>only once</b> to install. After that the app works <b>offline</b>.</p>
+    <a class="open" id="open" href="./">Open the app</a>
+  </div>
+</div>
+
+<div class="grid">
+  <section class="card" id="ios">
+    <h2>iPhone / iPad</h2>
+    <p class="warn">Use <b>Safari</b>. If the link opened inside a messenger app (KakaoTalk, LINE, etc.), tap its menu and choose <b>Open in Safari</b> first.</p>
+    <ol>
+      <li>Open the app address in <b>Safari</b>.</li>
+      <li>Tap the <span class="key"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M8 7l4-4 4 4"/><path d="M6 11H5v10h14V11h-1"/></svg>Share</span> button<br>(bottom of the screen on iPhone, top on iPad).</li>
+      <li>Scroll down and tap <span class="key">Add to Home Screen</span>.</li>
+      <li>Keep the name <b>Barcode QR</b> and tap <span class="key">Add</span>.</li>
+      <li><b>While still online</b>, open <b>Barcode QR</b> from the Home Screen once. This saves the app for offline use.</li>
+    </ol>
+    <p class="note">The Home Screen app keeps its own copy, separate from Safari, so step 5 is required.</p>
+  </section>
+
+  <section class="card" id="android">
+    <h2>Android</h2>
+    <p class="warn">Use <b>Chrome</b>. If the link opened inside a messenger app, tap its menu and choose <b>Open in Chrome</b> (or "Open in browser") first.</p>
+    <ol>
+      <li>Open the app address in <b>Chrome</b>.</li>
+      <li>Tap the <span class="key"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>menu</span> at the top right.</li>
+      <li>Tap <span class="key">Install app</span>.<br>If you only see <span class="key">Add to Home screen</span>, tap it and then choose <span class="key">Install</span>.</li>
+      <li>Tap <span class="key">Install</span> to confirm.</li>
+      <li>Open <b>Barcode QR</b> from the Home screen or app drawer.</li>
+    </ol>
+    <p class="note">Samsung Internet: tap <b>☰ menu → Add page to → Home screen</b>.<br>Chrome may also show an "Install" banner at the bottom by itself; tapping it does the same thing.</p>
+  </section>
+</div>
+
+<section class="card extra">
+  <h2>Using the app</h2>
+  <ol>
+    <li>Choose <b>Deposit</b> or <b>Dispense</b>. For Dispense, enter the amount.</li>
+    <li>Tap <b>Generate</b>.</li>
+    <li>Show the <b>Barcode</b> or <b>QR Code</b> tab to the scanner. The text under the code shows what it will do.</li>
+  </ol>
+
+  <h3>Updates</h3>
+  <p>When a new version is published, open the app once while online, then close it completely and open it again.</p>
+
+  <h3>Troubleshooting</h3>
+  <table>
+    <tr><th>No "Add to Home Screen" / "Install" option</th><td>The page is open inside a messenger or other in-app browser. Open it in Safari (iPhone) or Chrome (Android).</td></tr>
+    <tr><th>Blank screen or "no connection" when offline</th><td>The app was never opened online after installing. Connect to the internet, open the app once, then try offline again.</td></tr>
+    <tr><th>Old screen after an update</th><td>Open the app online, close it completely, and open it again.</td></tr>
+    <tr><th>Remove the app</th><td>Long-press the icon, then choose <b>Remove App</b> (iPhone) or <b>Uninstall</b> (Android).</td></tr>
+  </table>
+</section>
+
+<script>
+  const appUrl = new URL('./', location.href).href;
+  document.getElementById('url').textContent = appUrl;
+  new QRCode(document.getElementById('qr'), { text: appUrl, width: 150, height: 150 });
+</script>
+</body>
+</html>
